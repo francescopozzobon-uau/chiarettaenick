@@ -1,0 +1,10 @@
+{
+  "name": "chiarettaenick-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix chiarettaenick run dev",
+    "build": "npm --prefix chiarettaenick run build",
+    "start": "npm --prefix chiarettaenick run start",
+    "lint": "npm --prefix chiarettaenick run lint"
+  }
+}
