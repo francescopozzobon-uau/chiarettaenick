@@ -94,6 +94,25 @@ function CloseIcon({ size = 18 }: { size?: number }) {
   );
 }
 
+function ArrowRightIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg
+      aria-hidden="true"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    >
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
+  );
+}
+
 function YearMark() {
   return (
     <svg
@@ -244,29 +263,57 @@ function GiftRegistry() {
           <p>Se volete farci un regalo, potete aiutarci a dare forma e colore alla nostra casa.</p>
         </div>
         <div className="registry-grid">
-          <article className="registry-card registry-card-cream">
-            <div className="registry-logo icon-design-logo">
-              <Image src="/assets/icon-design.png" alt="Icon Design" width={269} height={55} />
+          <div className="registry-item">
+            <article className="registry-card registry-card-cream">
+              <div className="registry-logo icon-design-logo">
+                <Image src="/assets/icon-design.png" alt="Icon Design" width={269} height={55} />
+              </div>
+              <p>Via Economo, 5/A</p>
+              <p>34123 - Trieste (TS)</p>
+              <p>040 307028</p>
+              <a href="https://www.icondesignsolution.com/" target="_blank" rel="noopener noreferrer">
+                www.icondesignsolution.com
+              </a>
+            </article>
+            <div className="registry-bottom-rect registry-bottom-rect-feature">
+              <p className="registry-bottom-copy">Vuoi regalarci un pezzo di divano?</p>
+              <a
+                className="registry-couch-photo"
+                href="https://buy.stripe.com/dRm7sMafVbGAgzXaaU6kg00"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Apri pagamento Stripe per il divano"
+              >
+                <Image src="/assets/registry-couch.jpeg" alt="Divano angolare" width={882} height={478} />
+              </a>
+              <a
+                className="registry-bottom-button"
+                href="https://buy.stripe.com/dRm7sMafVbGAgzXaaU6kg00"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Apri pagamento Stripe"
+              >
+                <ArrowRightIcon />
+              </a>
             </div>
-            <p>Via Economo, 5/A</p>
-            <p>34123 - Trieste (TS)</p>
-            <p>040 307028</p>
-            <a href="https://www.icondesignsolution.com/" target="_blank" rel="noopener noreferrer">
-              www.icondesignsolution.com
-            </a>
-          </article>
+          </div>
 
-          <article className="registry-card registry-card-white">
-            <div className="registry-logo">
-              <Image src="/assets/gonnelli.jpg" alt="Gonnelli" width={300} height={176} />
+          <div className="registry-item">
+            <article className="registry-card registry-card-white">
+              <div className="registry-logo">
+                <Image src="/assets/gonnelli.jpg" alt="Gonnelli" width={300} height={176} />
+              </div>
+              <p>Via Mazzini, 30</p>
+              <p>34121 - Trieste (TS)</p>
+              <p>040 638638</p>
+              <a href="https://www.gonnelli.biz/" target="_blank" rel="noopener noreferrer">
+                www.gonnelli.biz
+              </a>
+            </article>
+            <div className="registry-bottom-rect registry-bottom-rect-complete">
+              <p className="registry-bottom-copy registry-bottom-copy-complete">Conclusa!</p>
             </div>
-            <p>Via Mazzini, 30</p>
-            <p>34121 - Trieste (TS)</p>
-            <p>040 638638</p>
-            <a href="https://www.gonnelli.biz/" target="_blank" rel="noopener noreferrer">
-              www.gonnelli.biz
-            </a>
-          </article>
+          </div>
         </div>
       </div>
     </section>
