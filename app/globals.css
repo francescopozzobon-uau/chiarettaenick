@@ -1,0 +1,505 @@
+@import "https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&display=swap";
+@import "tailwindcss";
+
+:root {
+  --background: #f5f5f3;
+  --foreground: #9eb3bd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Dosis", Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.wedding-site {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--wedding-paper);
+  color: var(--wedding-blue);
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+.hero-section {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--wedding-white);
+  padding: 40px 24px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+}
+
+.eyebrow {
+  color: var(--wedding-blue);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+}
+
+.year-wrap {
+  width: clamp(110px, 16.5vw, 165px);
+  aspect-ratio: 57 / 112;
+  color: var(--wedding-linen);
+}
+
+.year-mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.vertical-rule {
+  width: 1px;
+  height: 64px;
+  background: var(--wedding-blue);
+  opacity: 0.4;
+}
+
+.hero-quote {
+  max-width: 28rem;
+  margin: 0;
+  color: var(--wedding-blue);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.program-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--wedding-white);
+  padding: 64px 24px;
+}
+
+.paper-stripes {
+  position: absolute;
+  inset: 0;
+  background-color: var(--wedding-linen);
+  background-image: repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(255, 255, 255, 0.5) 8px, rgba(255, 255, 255, 0.5) 9px);
+  pointer-events: none;
+}
+
+.timeline {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-item {
+  display: flex;
+  max-width: 20rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.timeline-item h2 {
+  margin: 0;
+  color: var(--wedding-blue);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.35;
+}
+
+.timeline-item time {
+  margin-top: 8px;
+  color: var(--wedding-blue);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+.timeline-item p,
+.registry-copy p,
+.registry-card p,
+.rsvp-copy,
+.parking-modal p {
+  margin: 0;
+  color: var(--wedding-blue);
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.timeline-item p {
+  margin-top: 12px;
+  opacity: 0.8;
+}
+
+.event-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--wedding-blue);
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+  padding: 0;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.event-button {
+  margin-top: 8px;
+}
+
+.event-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.timeline-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-divider span {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: var(--wedding-blue);
+  opacity: 0.5;
+}
+
+.timeline-divider i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--wedding-blue);
+  opacity: 0.5;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(158, 179, 189, 0.25);
+  padding: 24px;
+}
+
+.parking-modal {
+  position: relative;
+  display: flex;
+  width: min(100%, 24rem);
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border-radius: 8px;
+  background: var(--wedding-white);
+  box-shadow: 0 24px 60px rgba(64, 81, 88, 0.16);
+  color: var(--wedding-blue);
+  padding: 32px;
+  text-align: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: 0;
+  background: transparent;
+  color: var(--wedding-blue);
+  cursor: pointer;
+  opacity: 0.5;
+  padding: 4px;
+}
+
+.registry-section {
+  background: var(--wedding-teal);
+  padding: 40px 24px 64px;
+}
+
+.registry-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.section-kicker {
+  color: var(--wedding-linen);
+}
+
+.section-kicker-blue {
+  color: var(--wedding-blue);
+}
+
+.registry-copy {
+  max-width: 28rem;
+  margin: 16px auto 40px;
+  text-align: center;
+}
+
+.registry-copy p {
+  color: var(--wedding-linen);
+  font-size: 0.85rem;
+  line-height: 1.9;
+}
+
+.registry-copy p + p {
+  margin-top: 16px;
+}
+
+.registry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 24rem));
+  justify-content: center;
+  gap: 32px;
+}
+
+.registry-card {
+  display: flex;
+  min-height: 288px;
+  aspect-ratio: 4 / 3;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 999px 999px 0 0;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.registry-card-cream {
+  background: var(--wedding-paper);
+}
+
+.registry-card-white {
+  background: var(--wedding-white);
+}
+
+.registry-logo {
+  position: relative;
+  display: flex;
+  width: 104px;
+  height: 88px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.registry-logo img {
+  height: auto;
+  max-height: 82px;
+  object-fit: contain;
+  transform: scale(1.35);
+}
+
+.icon-design-logo img {
+  transform: scale(1.45);
+}
+
+.registry-card p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.registry-card a {
+  margin-top: 4px;
+  color: var(--wedding-blue);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rsvp-section {
+  background: var(--wedding-white);
+  padding: 80px 24px;
+}
+
+.rsvp-inner {
+  max-width: 32rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rsvp-copy {
+  margin-top: 24px;
+  margin-bottom: 32px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.rsvp-links {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.rsvp-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--wedding-blue);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.message-bubble {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--wedding-blue);
+  color: var(--wedding-white);
+  transition: transform 180ms ease;
+}
+
+.rsvp-person:hover .message-bubble {
+  transform: scale(1.08);
+}
+
+.photo-section {
+  display: flex;
+  justify-content: center;
+  background: var(--wedding-paper);
+  padding: 24px;
+}
+
+.photo-frame {
+  position: relative;
+  width: min(100%, 28rem);
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.photo-frame img {
+  object-fit: cover;
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(158, 179, 189, 0.15) 100%);
+  pointer-events: none;
+}
+
+.fade-up {
+  animation: fade-up 900ms ease-out both;
+}
+
+.fade-in {
+  animation: fade-in 900ms ease-out both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-section {
+    padding: 32px 20px;
+  }
+
+  .registry-grid {
+    grid-template-columns: minmax(0, 24rem);
+    gap: 24px;
+  }
+
+  .registry-card {
+    min-height: 264px;
+  }
+}
+
+@media (max-width: 430px) {
+  .eyebrow,
+  .section-kicker {
+    font-size: 0.7rem;
+    letter-spacing: 0.24em;
+  }
+
+  .rsvp-links {
+    gap: 40px;
+  }
+
+  .message-bubble {
+    width: 72px;
+    height: 72px;
+  }
+
+  .registry-section,
+  .program-section,
+  .rsvp-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
