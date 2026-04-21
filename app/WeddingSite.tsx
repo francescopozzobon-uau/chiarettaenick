@@ -6,6 +6,7 @@ import { useState } from "react";
 
 type WeddingSiteProps = {
   showReception?: boolean;
+  ceremonyTitle?: string;
 };
 
 const palette = {
@@ -184,13 +185,19 @@ function Hero() {
   );
 }
 
-function Program({ showReception }: { showReception: boolean }) {
+function Program({
+  showReception,
+  ceremonyTitle,
+}: {
+  showReception: boolean;
+  ceremonyTitle: string;
+}) {
   return (
     <section className="program-section">
       <div className="paper-stripes" aria-hidden="true" />
       <div className="timeline fade-in">
         <article className="timeline-item">
-          <h2>Cerimonia</h2>
+          <h2>{ceremonyTitle}</h2>
           <time>15:00</time>
           <p>
             Parrocchia di San Vincenzo de&apos; Paoli
@@ -302,7 +309,10 @@ function CouplePhoto() {
   );
 }
 
-export default function WeddingSite({ showReception = true }: WeddingSiteProps) {
+export default function WeddingSite({
+  showReception = true,
+  ceremonyTitle = "Cerimonia",
+}: WeddingSiteProps) {
   return (
     <main
       className="wedding-site"
@@ -317,7 +327,7 @@ export default function WeddingSite({ showReception = true }: WeddingSiteProps) 
       }
     >
       <Hero />
-      <Program showReception={showReception} />
+      <Program showReception={showReception} ceremonyTitle={ceremonyTitle} />
       <GiftRegistry />
       <Rsvp />
       <CouplePhoto />
